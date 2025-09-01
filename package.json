@@ -1,0 +1,19 @@
+{
+  "name": "cypress-automation-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "test": "cypress run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^19.0.0",
+    "cypress": "^13.6.0",
+    "cypress-file-upload": "^5.0.8"
+  }
+}
