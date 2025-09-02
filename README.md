@@ -1,5 +1,7 @@
 # 🚀 Projeto de Automação de Testes - DemoQA + BookStore API
 
+[![Cypress Tests](https://github.com/{SEU_USUARIO}/{SEU_REPOSITORIO}/actions/workflows/cypress-simple.yml/badge.svg)](https://github.com/{SEU_USUARIO}/{SEU_REPOSITORIO}/actions/workflows/cypress-simple.yml)
+
 ## 📋 **Visão Geral do Projeto**
 
 Este projeto implementa uma suite completa de testes automatizados para o site DemoQA, incluindo testes de API para BookStore e testes de interface para diversas funcionalidades web. O projeto utiliza Cypress como framework principal e segue as melhores práticas de automação de testes.
@@ -121,7 +123,30 @@ npx cypress run --spec "cypress/e2e/sortable.cy.js"
 
 # Modo interativo
 npx cypress open
+
+# Testes para CI/CD
+npm run test:ci
+npm run cypress:ci
 ```
+
+## 🔄 **CI/CD com GitHub Actions**
+
+O projeto está configurado com GitHub Actions para execução automática dos testes:
+
+### **Workflow Automático:**
+- ✅ **Execução automática** a cada push/PR
+- ✅ **Testes em ambiente Linux** (Ubuntu)
+- ✅ **Cache de dependências** para maior velocidade
+- ✅ **Upload de screenshots** em caso de falha
+- ✅ **Upload de vídeos** para análise
+- ✅ **Relatórios automáticos** de execução
+
+### **Configuração CI:**
+- **Arquivo:** `.github/workflows/cypress-simple.yml`
+- **Configuração:** `cypress.config.ci.js`
+- **Scripts:** `npm run test:ci`
+- **Retry:** 2 tentativas em caso de falha
+- **Viewport:** 1280x720 para consistência
 
 ## 📊 **Status dos Testes**
 

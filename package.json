@@ -6,7 +6,10 @@
   "scripts": {
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "test": "cypress run"
+    "test": "cypress run",
+    "cypress:ci": "cypress run --config cypress.config.ci.js",
+    "cypress:ci:headless": "cypress run --config cypress.config.ci.js --headless",
+    "test:ci": "cypress run --config cypress.config.ci.js"
   },
   "keywords": [],
   "author": "Lafaiete Machado",
