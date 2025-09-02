@@ -13,7 +13,9 @@
     "test:bdd": "cypress run --config cypress.config.cucumber.js",
     "test:bdd:open": "cypress open --config cypress.config.cucumber.js",
     "test:api": "cypress run --spec 'cypress/e2e/api/**/*.cy.js'",
-    "test:ui": "cypress run --spec 'cypress/e2e/ui/**/*.cy.js'"
+    "test:ui": "cypress run --spec 'cypress/e2e/ui/**/*.cy.js'",
+    "test:reports": "cypress run --reporter cypress-mochawesome-reporter",
+    "test:ci:reports": "cypress run --config-file cypress.config.ci.js --reporter cypress-mochawesome-reporter"
   },
   "keywords": [],
   "author": "Lafaiete Machado",
@@ -21,6 +23,7 @@
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^19.0.0",
     "cypress": "^13.6.0",
-    "cypress-file-upload": "^5.0.8"
+    "cypress-file-upload": "^5.0.8",
+    "cypress-mochawesome-reporter": "^4.0.2"
   }
 }
