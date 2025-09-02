@@ -1,6 +1,6 @@
 # 🚀 Projeto de Automação de Testes - DemoQA + BookStore API
 
-[![Cypress Tests](https://github.com/{SEU_USUARIO}/{SEU_REPOSITORIO}/actions/workflows/cypress-simple.yml/badge.svg)](https://github.com/{SEU_USUARIO}/{SEU_REPOSITORIO}/actions/workflows/cypress-simple.yml)
+[![Cypress Tests](https://github.com/lafaietemachado/Desafio---QA-Automation/actions/workflows/cypress-simple.yml/badge.svg)](https://github.com/lafaietemachado/Desafio---QA-Automation/actions/workflows/cypress-simple.yml)
 
 ## 📋 **Visão Geral do Projeto**
 
