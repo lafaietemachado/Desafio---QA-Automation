@@ -13,6 +13,7 @@ Este projeto implementa uma suite completa de testes automatizados para o site D
 - **Cypress 13.6.0** - Framework de automação
 - **Page Object Pattern** - Padrão de arquitetura
 - **BDD (Behavior Driven Development)** - Metodologia de desenvolvimento
+- **Cypress Mochawesome Reporter** - Gerador de relatórios estruturados
 
 ### **✅ Padrões de Projeto**
 - **Page Object Pattern** ✅
@@ -32,6 +33,13 @@ Este projeto implementa uma suite completa de testes automatizados para o site D
 - **Step Definitions implementados** ✅
 - **Cucumber Preprocessor configurado** ✅
 - **Arquivos .feature funcionais** ✅
+
+### **✅ Relatórios Estruturados**
+- **Mochawesome Reporter** ✅ - Relatórios HTML profissionais
+- **Vídeos integrados** ✅ - Capturas automáticas nos relatórios
+- **Screenshots automáticos** ✅ - Em caso de falha
+- **Métricas detalhadas** ✅ - Tempo, status, performance
+- **Export HTML** ✅ - Relatórios para análise offline
 
 ## 🏗️ **Estrutura do Projeto (Padrão de Mercado)**
 
@@ -73,14 +81,17 @@ cypress-automation-tests/
 │   └── support/
 │       ├── commands.js                  # Comandos personalizados
 │       └── e2e.js                       # Configurações
-├── cypress.config.js                    # Configuração Cypress
-├── cypress.config.ci.js                 # Configuração CI/CD
+├── cypress.config.js                    # Configuração Cypress com reporter
+├── cypress.config.ci.js                 # Configuração CI/CD com reporter
 ├── cypress.config.cucumber.js           # Configuração BDD
 ├── package.json                         # Dependências
 ├── .github/
 │   └── workflows/
 │       ├── cypress-simple.yml           # Workflow principal CI/CD
 │       └── cypress-tests.yml            # Workflow alternativo CI/CD
+├── cypress/
+│   └── reports/                         # Relatórios estruturados
+│       └── html/                        # Relatórios HTML
 └── README.md                            # Documentação
 ```
 
@@ -184,6 +195,7 @@ O projeto está configurado com **DOIS workflows** do GitHub Actions para máxim
 - ✅ **Execução direta** via `npm run test:ci`
 - ✅ **Sem flags problemáticas** do Cypress Cloud
 - ✅ **Upload de artefatos** completos
+- ✅ **Upload de relatórios HTML** estruturados
 - ✅ **Resumo automático** de resultados
 
 ### **Configuração CI:**
@@ -283,9 +295,13 @@ npx cypress run --spec "cypress/e2e/features/bookstore-flow.feature"
 - **`npm run test:bdd`** ✅ - Executa todos os testes BDD
 - **`npm run test:bdd:open`** ✅ - Abre Cypress com BDD
 
+### **✅ Scripts de Relatórios:**
+- **`npm run test:reports`** ✅ - Executa testes com relatórios estruturados
+- **`npm run test:ci:reports`** ✅ - Executa testes CI com relatórios estruturados
+
 ### **✅ Configurações:**
-- **`cypress.config.js`** ✅ - Configuração padrão
-- **`cypress.config.ci.js`** ✅ - Configuração para CI/CD
+- **`cypress.config.js`** ✅ - Configuração padrão com reporter
+- **`cypress.config.ci.js`** ✅ - Configuração para CI/CD com reporter
 - **`cypress.config.cucumber.js`** ✅ - Configuração para BDD
 
 ## 🔧 **Comandos Personalizados**
@@ -330,6 +346,8 @@ npx cypress run --spec "cypress/e2e/features/bookstore-flow.feature"
 14. **Arquitetura Escalável** - Fácil adição de novas funcionalidades
 15. **CI/CD Duplo** - Dois workflows GitHub Actions para máxima flexibilidade
 16. **Workflows Corrigidos** - Sem erros de flags problemáticas do Cypress Cloud
+17. **Relatórios Estruturados** - Mochawesome HTML com vídeos integrados
+18. **Upload Automático** - Relatórios HTML no GitHub Actions
 
 ## 🔧 **Melhorias Técnicas**
 
@@ -372,6 +390,7 @@ O projeto inclui arquivos de feature para cada funcionalidade:
 - CRUD completo de tabelas web
 - Controle preciso de barra de progresso
 - Reorganização inteligente de elementos sortable
+- Relatórios estruturados HTML com vídeos integrados
 
 ### **✅ Qualidade Técnica:**
 - Arquitetura Page Object Pattern
@@ -380,6 +399,8 @@ O projeto inclui arquivos de feature para cada funcionalidade:
 - Código limpo e profissional
 - Testes estáveis e confiáveis
 - Cobertura completa de funcionalidades
+- Relatórios profissionais com Mochawesome
+- Upload automático de artefatos no CI/CD
 
 ### **✅ Execução:**
 - Todos os testes passando com sucesso
