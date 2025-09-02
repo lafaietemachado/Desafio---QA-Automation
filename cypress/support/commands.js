@@ -63,3 +63,8 @@ Cypress.Commands.add('closeModal', (closeSelector = '#closeLargeModal') => {
   cy.get(closeSelector).scrollIntoView().click({force: true})
   cy.log('✅ Modal fechado com sucesso')
 })
+
+Cypress.Commands.add('searchRecord', (searchText) => {
+  cy.get('#searchBox').should('be.visible').clear().type(searchText)
+  cy.log(`✅ Busca realizada para: ${searchText}`)
+})
