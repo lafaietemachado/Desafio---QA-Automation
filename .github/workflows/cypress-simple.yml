@@ -23,12 +23,14 @@ jobs:
     - name: Install dependencies
       run: npm ci
       
+    - name: Verify Cypress installation
+      run: npx cypress verify
+      
+    - name: List test files
+      run: find cypress/e2e -name "*.cy.js" -type f
+      
     - name: Run Cypress tests
-      uses: cypress-io/github-action@v6
-      with:
-        browser: chrome
-        record: false
-        spec: 'cypress/e2e/**/*.cy.js'
+      run: npm run test:ci
         
     - name: Upload screenshots
       uses: actions/upload-artifact@v4
@@ -43,3 +45,10 @@ jobs:
       with:
         name: cypress-videos
         path: cypress/videos/
+        
+    - name: Upload test results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: cypress-results
+        path: cypress/results/
