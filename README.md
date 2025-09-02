@@ -10,7 +10,8 @@
 - **Page Object Pattern** ✅
   - `AccountPage.js` - Operações de Account
   - `BookStorePage.js` - Operações de BookStore
-  - `FormsPage.js` - Operações de Front End
+  - `FormsPage.js` - Front End Forms
+  - `AlertsFrameWindowsPage.js` - Alerts, Frame & Windows
 - **Estrutura organizada** ✅
 - **Código bem estruturado** ✅
 
@@ -30,6 +31,7 @@
 - **Preenchimento de formulários** ✅
 - **Upload de arquivos** ✅
 - **Validação de popups** ✅
+- **Gerenciamento de janelas** ✅
 
 ## 🏗️ **Estrutura do Projeto**
 
@@ -38,11 +40,13 @@ cypress-automation-tests/
 ├── cypress/
 │   ├── e2e/
 │   │   ├── bookstore-api.cy.js      # Teste principal API
-│   │   └── forms-practice.cy.js     # Teste Front End
+│   │   ├── forms-practice.cy.js     # Teste Front End Forms
+│   │   └── browser-windows.cy.js    # Teste Browser Windows
 │   ├── pages/                        # Page Objects
 │   │   ├── AccountPage.js            # APIs de Account
 │   │   ├── BookStorePage.js          # APIs de BookStore
-│   │   └── FormsPage.js              # Front End Forms
+│   │   ├── FormsPage.js              # Front End Forms
+│   │   └── AlertsFrameWindowsPage.js # Browser Windows
 │   ├── fixtures/
 │   │   └── test-file.txt             # Arquivo para upload
 │   └── support/
@@ -64,6 +68,11 @@ cypress-automation-tests/
 - **QUANDO:** Navegar para Forms → Practice Form, preencher formulário, fazer upload, submeter
 - **ENTÃO:** Validar popup de sucesso e fechar
 
+### **3. Browser Windows (Fase 3)**
+- **DADO:** Página inicial do DemoQA
+- **QUANDO:** Navegar para Alerts, Frame & Windows → Browser Windows, clicar New Window
+- **ENTÃO:** Validar nova janela aberta e comportamento da página
+
 ## 🚀 **Como Executar**
 
 ### **Instalação**
@@ -83,7 +92,7 @@ npm run cypress:open
 ## 📊 **Resultados**
 
 - **Status:** ✅ Funcionando perfeitamente
-- **Cobertura:** 100% do desafio (API + Front End)
+- **Cobertura:** 100% do desafio (API + Front End + Browser Windows)
 - **Estrutura:** BDD + Page Objects
 - **Estabilidade:** Muito alta
 
@@ -95,8 +104,9 @@ npm run cypress:open
 4. **Logs Informativos** - Acompanhamento claro da execução
 5. **Código Limpo** - Sem comentários desnecessários
 6. **Estrutura Profissional** - Padrões de mercado
-7. **Testes Completos** - API + Front End
+7. **Testes Completos** - API + Front End + Browser Windows
 8. **Upload de Arquivos** - Funcionalidade avançada
+9. **Gerenciamento de Janelas** - Funcionalidade avançada
 
 ## 🎉 **Conclusão**
 
@@ -107,7 +117,9 @@ npm run cypress:open
 - ✅ BDD implementado
 - ✅ Testes de API funcionais
 - ✅ Testes de Front End funcionais
+- ✅ Testes de Browser Windows funcionais
 - ✅ Execução contínua e automatizada
 - ✅ Upload de arquivos incluído
+- ✅ Gerenciamento de janelas incluído
 
 **Projeto completo e pronto para entrega e avaliação!** 🚀
