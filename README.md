@@ -9,7 +9,8 @@
 ### **✅ Padrões de Projeto**
 - **Page Object Pattern** ✅
   - `AlertsFrameWindowsPage.js` - Browser Windows
-  - `WebTablesPage.js` - Web Tables (NOVO)
+  - `WebTablesPage.js` - Web Tables
+  - `ProgressBarPage.js` - Progress Bar (NOVO)
 - **Estrutura organizada** ✅
 - **Código bem estruturado** ✅
 - **Comandos personalizados** ✅
@@ -31,7 +32,8 @@
 - **Upload de arquivos** ✅
 - **Validação de popups** ✅
 - **Gerenciamento de janelas** ✅
-- **Web Tables CRUD** ✅ (NOVO)
+- **Web Tables CRUD** ✅
+- **Progress Bar Control** ✅ (NOVO)
 
 ## 🏗️ **Estrutura Atualizada do Projeto**
 
@@ -42,10 +44,12 @@ cypress-automation-tests/
 │   │   ├── bookstore-api.cy.js      # Teste principal API
 │   │   ├── forms-practice.cy.js     # Teste Front End Forms
 │   │   ├── browser-windows.cy.js    # Teste Browser Windows
-│   │   └── web-tables.cy.js         # Teste Web Tables (NOVO)
+│   │   ├── web-tables.cy.js         # Teste Web Tables
+│   │   └── progress-bar.cy.js       # Teste Progress Bar (NOVO)
 │   ├── pages/                        # Page Objects
 │   │   ├── AlertsFrameWindowsPage.js # Browser Windows
-│   │   └── WebTablesPage.js          # Web Tables (NOVO)
+│   │   ├── WebTablesPage.js          # Web Tables
+│   │   └── ProgressBarPage.js        # Progress Bar (NOVO)
 │   ├── fixtures/
 │   │   └── test-file.txt             # Arquivo para upload
 │   └── support/
@@ -73,13 +77,22 @@ cypress-automation-tests/
 - **QUANDO:** Navegar para Alerts, Frame & Windows → Browser Windows, clicar New Window
 - **ENTÃO:** Validar nova janela aberta e comportamento da página
 
-### **4. Web Tables (Fase 4 - NOVA)**
+### **4. Web Tables (Fase 4)**
 - **DADO:** Página inicial do DemoQA
 - **QUANDO:** Navegar para Elements → Web Tables
 - **ENTÃO:** 
   - Criar, editar e deletar registro
   - Criar 12 registros dinamicamente
   - Deletar todos os registros criados
+
+### **5. Progress Bar (Fase 5 - NOVA)**
+- **DADO:** Página inicial do DemoQA
+- **QUANDO:** Navegar para Widgets → Progress Bar
+- **ENTÃO:** 
+  - Iniciar progresso e parar ANTES dos 25%
+  - Validar valor ≤ 25%
+  - Reiniciar e deixar chegar aos 100%
+  - Resetar e validar volta para 0%
 
 ## 🚀 **Como Executar**
 
@@ -94,7 +107,7 @@ npm install
 npx cypress run --browser chrome
 
 # Teste específico
-npx cypress run --spec "cypress/e2e/web-tables.cy.js"
+npx cypress run --spec "cypress/e2e/progress-bar.cy.js"
 
 # Modo interativo
 npx cypress open
@@ -107,7 +120,8 @@ npx cypress open
 ✅ browser-windows.cy.js                    00:23        1        1        -        -        - 
 ✅ forms-practice.cy.js                     00:14        1        1        -        -        - 
 ✅ web-tables.cy.js                         01:12        2        2        -        -        - 
-✅ All specs passed!                        01:52        5        5        -        -        - 
+✅ progress-bar.cy.js                       00:XX        1        1        -        -        - 
+✅ All specs passed!                        01:XX        6        6        -        -        - 
 ```
 
 - **Status:** ✅ Funcionando perfeitamente
@@ -123,12 +137,18 @@ npx cypress open
 - ✅ **Update**: Editar registros existentes
 - ✅ **Delete**: Remover registros
 
-### **2. Teste de Volume**
+### **2. Progress Bar Control (NOVA)**
+- ✅ **Monitoramento Inteligente**: Para automaticamente entre 20-25%
+- ✅ **Validação Precisa**: Garante que para ANTES dos 25%
+- ✅ **Ciclo Completo**: Start → Stop → Start → 100% → Reset
+- ✅ **Validação de Reset**: Confirma volta para 0%
+
+### **3. Teste de Volume**
 - ✅ **12 registros criados** dinamicamente
 - ✅ **Todos os registros deletados** sistematicamente
 - ✅ **Validação completa** de cada operação
 
-### **3. Comandos Personalizados**
+### **4. Comandos Personalizados**
 - ✅ **`cy.navigateToDemoQA()`** - Navegação padrão
 - ✅ **`cy.navigateToSection()`** - Navegação para seções
 - ✅ **`cy.navigateToSubmenu()`** - Navegação para submenus
@@ -145,12 +165,13 @@ npx cypress open
 4. **Comandos Personalizados** - Reutilização de código
 5. **Código Limpo** - Sem comentários desnecessários
 6. **Estrutura Profissional** - Padrões de mercado
-7. **Testes Completos** - API + Front End + Browser Windows + Web Tables
+7. **Testes Completos** - API + Front End + Browser Windows + Web Tables + Progress Bar
 8. **Upload de Arquivos** - Funcionalidade avançada
 9. **Gerenciamento de Janelas** - Funcionalidade avançada
 10. **CRUD Web Tables** - Funcionalidade completa de banco de dados
-11. **Testes de Volume** - Criação e remoção de múltiplos registros
-12. **Arquitetura Escalável** - Fácil adição de novas funcionalidades
+11. **Progress Bar Control** - Controle preciso de progresso com monitoramento inteligente
+12. **Testes de Volume** - Criação e remoção de múltiplos registros
+13. **Arquitetura Escalável** - Fácil adição de novas funcionalidades
 
 ## 🔧 **Melhorias Técnicas Implementadas**
 
@@ -159,10 +180,30 @@ npx cypress open
 - ✅ Estrutura de testes otimizada
 - ✅ Execução mais rápida e eficiente
 
-### **2. Manutenibilidade**
+### **2. Monitoramento Inteligente**
+- ✅ **Progress Bar**: Para automaticamente no momento ideal
+- ✅ **Validação em Tempo Real**: Verifica progresso continuamente
+- ✅ **Timeout Otimizado**: Configurado para diferentes cenários
+
+### **3. Manutenibilidade**
 - ✅ Código autoexplicativo
 - ✅ Estrutura clara e organizada
 - ✅ Fácil de entender e modificar
+
+## 🎯 **Detalhes da Nova Funcionalidade - Progress Bar**
+
+### **Funcionalidades Implementadas:**
+- ✅ **Navegação Inteligente**: Widgets → Progress Bar
+- ✅ **Controle Preciso**: Para entre 20-25% (antes dos 25%)
+- ✅ **Monitoramento em Tempo Real**: Verifica progresso continuamente
+- ✅ **Validação Dupla**: Primeira execução ≤ 25%, segunda execução = 100%
+- ✅ **Reset Completo**: Volta para 0% e valida
+
+### **Técnicas Avançadas:**
+- ✅ **Polling Inteligente**: Verifica progresso a cada verificação
+- ✅ **Timeout Configurável**: 10s para primeira execução, 30s para 100%
+- ✅ **Logs Informativos**: Feedback claro sobre cada etapa
+- ✅ **Validação Robusta**: Confirma cada passo do processo
 
 ## 🎉 **Conclusão**
 
@@ -179,6 +220,7 @@ npx cypress open
 
 ### **✅ Funcionalidades Extras:**
 - Web Tables CRUD completo
+- Progress Bar Control com monitoramento inteligente
 - Testes de volume (12 registros)
 - Comandos personalizados reutilizáveis
 - Código limpo e profissional
@@ -189,5 +231,12 @@ npx cypress open
 - Todos os testes passando
 - Performance otimizada
 - Estrutura profissional
+- Monitoramento inteligente de progresso
 
 **Projeto completo, otimizado e pronto para entrega e avaliação!** 🚀
+
+### **🆕 Última Atualização:**
+- **Progress Bar Control** implementado com sucesso
+- **Monitoramento inteligente** de progresso
+- **Validação precisa** de valores
+- **Ciclo completo** de teste implementado

@@ -68,3 +68,8 @@ Cypress.Commands.add('searchRecord', (searchText) => {
   cy.get('#searchBox').should('be.visible').clear().type(searchText)
   cy.log(`✅ Busca realizada para: ${searchText}`)
 })
+
+Cypress.Commands.add('waitForProgressBar', (targetPercentage, timeout = 60000) => {
+  cy.get('.progress-bar', { timeout: timeout }).should('contain', targetPercentage)
+  cy.log(`✅ Barra de progresso atingiu ${targetPercentage}`)
+})
