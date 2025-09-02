@@ -1,4 +1,7 @@
-Este é um arquivo de teste para upload no formulário de prática.
-Arquivo criado para demonstração dos testes de Front End.
-Data de criação: 2024
+Ano: 2025
+Data: 09/2025
+Executor: Lafaiete Machado
 Projeto: Teste de Automação Accenture
+Desafio: Automação de Testes - DemoQA + BookStore API
+Objetivo: Validar funcionalidades e fluxos do frontend e API com automação
+
