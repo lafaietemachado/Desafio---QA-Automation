@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import AlertsFrameWindowsPage from '../pages/AlertsFrameWindowsPage.js'
+import AlertsFrameWindowsPage from '../../pages/AlertsFrameWindowsPage.js'
 
 describe('Browser Windows', () => {
   beforeEach(() => {

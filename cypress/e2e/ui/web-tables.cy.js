@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import WebTablesPage from '../pages/WebTablesPage.js'
+import WebTablesPage from '../../pages/WebTablesPage.js'
 
 describe('Web Tables', () => {
   beforeEach(() => {

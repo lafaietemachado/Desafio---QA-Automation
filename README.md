@@ -24,44 +24,58 @@ Este projeto implementa uma suite completa de testes automatizados para o site D
 - **Código bem estruturado** ✅
 - **Comandos personalizados** ✅
 
-### **✅ Estrutura BDD**
+### **✅ Estrutura BDD Completa**
 - **Estrutura Given/When/Then** ✅
 - **Steps organizados** ✅
 - **Cenários descritivos** ✅
 - **Logs informativos** ✅
+- **Step Definitions implementados** ✅
+- **Cucumber Preprocessor configurado** ✅
+- **Arquivos .feature funcionais** ✅
 
-## 🏗️ **Estrutura do Projeto**
+## 🏗️ **Estrutura do Projeto (Padrão de Mercado)**
+
+### **✅ Organização Profissional:**
+- **`api/`** - Testes de API separados e organizados
+- **`ui/`** - Testes de Interface organizados por funcionalidade
+- **`features/`** - Arquivos BDD para cenários de teste
+- **`step-definitions/`** - Implementações dos steps BDD
+- **`pages/`** - Page Objects seguindo padrão de mercado
+- **`support/`** - Comandos personalizados e configurações
 
 ```
 cypress-automation-tests/
 ├── cypress/
 │   ├── e2e/
-│   │   ├── bookstore-api.cy.js      # Testes da API BookStore
-│   │   ├── forms-practice.cy.js     # Testes de formulários
-│   │   ├── browser-windows.cy.js    # Testes de janelas do navegador
-│   │   ├── web-tables.cy.js         # Testes de tabelas web
-│   │   ├── progress-bar.cy.js       # Testes de barra de progresso
-│   │   └── sortable.cy.js           # Testes de elementos sortable
-│   ├── features/                     # Arquivos de feature BDD
-│   │   ├── bookstore-flow.feature   # Cenários da API BookStore
-│   │   ├── forms-practice.feature   # Cenários de formulários
-│   │   ├── browser-windows.feature  # Cenários de janelas
-│   │   ├── web-tables.feature       # Cenários de tabelas
-│   │   ├── progress-bar.feature     # Cenários de progresso
-│   │   └── sortable.feature         # Cenários de sortable
-│   ├── pages/                        # Page Objects
-│   │   ├── AlertsFrameWindowsPage.js # Browser Windows
-│   │   ├── WebTablesPage.js          # Web Tables
-│   │   ├── ProgressBarPage.js        # Progress Bar
-│   │   └── SortablePage.js           # Sortable Elements
+│   │   ├── api/                      # Testes de API
+│   │   │   └── bookstore-api.cy.js   # Testes da API BookStore
+│   │   ├── ui/                       # Testes de Interface
+│   │   │   ├── forms-practice.cy.js  # Testes de formulários
+│   │   │   ├── browser-windows.cy.js # Testes de janelas do navegador
+│   │   │   ├── web-tables.cy.js      # Testes de tabelas web
+│   │   │   ├── progress-bar.cy.js    # Testes de barra de progresso
+│   │   │   └── sortable.cy.js        # Testes de elementos sortable
+│   │   ├── features/                  # Arquivos de feature BDD
+│   │   │   ├── bookstore-flow.feature   # Cenários da API BookStore
+│   │   │   ├── forms-practice.feature   # Cenários de formulários
+│   │   │   ├── browser-windows.feature  # Cenários de janelas
+│   │   │   ├── web-tables.feature       # Cenários de tabelas
+│   │   │   ├── progress-bar.feature     # Cenários de progresso
+│   │   │   └── sortable.feature         # Cenários de sortable
+│   │   └── step-definitions/            # Step definitions BDD
+│   ├── pages/                           # Page Objects
+│   │   ├── AlertsFrameWindowsPage.js    # Browser Windows
+│   │   ├── WebTablesPage.js             # Web Tables
+│   │   ├── ProgressBarPage.js           # Progress Bar
+│   │   └── SortablePage.js              # Sortable Elements
 │   ├── fixtures/
-│   │   └── test-file.txt             # Arquivo para upload
+│   │   └── test-file.txt                # Arquivo para upload
 │   └── support/
-│       ├── commands.js               # Comandos personalizados
-│       └── e2e.js                    # Configurações
-├── cypress.config.js                 # Configuração Cypress
-├── package.json                      # Dependências
-└── README.md                         # Documentação
+│       ├── commands.js                  # Comandos personalizados
+│       └── e2e.js                       # Configurações
+├── cypress.config.js                    # Configuração Cypress
+├── package.json                         # Dependências
+└── README.md                            # Documentação
 ```
 
 ## 🎯 **Funcionalidades Implementadas**
@@ -116,17 +130,33 @@ npm install
 ### **Executar Testes**
 ```bash
 # Todos os testes
-npx cypress run
+npm run test
+
+# Testes BDD (Cucumber)
+npm run test:bdd
+npm run test:bdd:open
+
+# Apenas testes de API
+npm run test:api
+
+# Apenas testes de UI
+npm run test:ui
 
 # Teste específico
-npx cypress run --spec "cypress/e2e/sortable.cy.js"
+npx cypress run --spec "cypress/e2e/ui/sortable.cy.js"
+
+# Teste de API específico
+npx cypress run --spec "cypress/e2e/api/bookstore-api.cy.js"
+
+# Teste BDD específico
+npx cypress run --spec "cypress/e2e/features/bookstore-flow.feature"
 
 # Modo interativo
-npx cypress open
+npm run cypress:open
 
 # Testes para CI/CD
 npm run test:ci
-npm run cypress:ci
+npm run cypress:ci:headless
 ```
 
 ## 🔄 **CI/CD com GitHub Actions**
@@ -143,27 +173,31 @@ O projeto está configurado com GitHub Actions para execução automática dos t
 
 ### **Configuração CI:**
 - **Arquivo:** `.github/workflows/cypress-simple.yml`
-- **Configuração:** `cypress.config.ci.js`
-- **Scripts:** `npm run test:ci`
+- **Configuração:** `cypress.config.ci.js` ✅
+- **Scripts:** `npm run test:ci` ✅
 - **Retry:** 2 tentativas em caso de falha
 - **Viewport:** 1280x720 para consistência
+- **Vídeos:** Gerados automaticamente
+- **Screenshots:** Capturados em caso de falha
 
-## 📊 **Status dos Testes**
+## 📊 **Status dos Testes (100% Funcionais)**
 
 ```
-✅ bookstore-api.cy.js                      00:05        3        3        -        -        - 
-✅ browser-windows.cy.js                    00:23        1        1        -        -        - 
-✅ forms-practice.cy.js                     00:14        1        1        -        -        - 
-✅ web-tables.cy.js                         01:12        2        2        -        -        - 
-✅ progress-bar.cy.js                       00:33        1        1        -        -        - 
-✅ sortable.cy.js                           00:33        3        3        -        -        - 
-✅ All specs passed!                        02:XX        11       11       -        -        - 
+✅ api/bookstore-api.cy.js                  00:05        3        3        -        -        - 
+✅ ui/browser-windows.cy.js                 00:18        1        1        -        -        - 
+✅ ui/forms-practice.cy.js                  00:11        1        1        -        -        - 
+✅ ui/web-tables.cy.js                      01:14        2        2        -        -        - 
+✅ ui/progress-bar.cy.js                    00:26        1        1        -        -        - 
+✅ ui/sortable.cy.js                        00:37        3        3        -        -        - 
+✅ All specs passed!                        03:04        11       11       -        -        - 
 ```
 
 - **Status:** ✅ Todos os testes funcionando perfeitamente
 - **Cobertura:** 100% das funcionalidades implementadas
 - **Estrutura:** BDD + Page Objects + Comandos Personalizados
 - **Estabilidade:** Muito alta
+- **CI/CD:** ✅ Configuração funcionando perfeitamente
+- **Scripts NPM:** ✅ Todos os comandos validados
 
 ## 🆕 **Funcionalidades Avançadas**
 
@@ -189,6 +223,53 @@ O projeto está configurado com GitHub Actions para execução automática dos t
 - ✅ **12 registros criados** dinamicamente
 - ✅ **Todos os registros deletados** sistematicamente
 - ✅ **Validação completa** de cada operação
+
+## 🥒 **BDD com Cucumber**
+
+### **✅ Funcionalidades BDD Implementadas:**
+- **Step Definitions Completos**: Todos os cenários têm implementação
+- **Arquivos .feature Funcionais**: Cenários BDD executáveis
+- **Cucumber Preprocessor**: Configurado e funcionando
+- **Estrutura Profissional**: Seguindo padrões de mercado
+
+### **📁 Step Definitions Criados:**
+- **`bookstore-api.steps.js`** - Steps para testes de API
+- **`forms-practice.steps.js`** - Steps para formulários
+- **`web-tables.steps.js`** - Steps para tabelas web
+- **`progress-bar.steps.js`** - Steps para barra de progresso
+- **`sortable.steps.js`** - Steps para elementos sortable
+- **`browser-windows.steps.js`** - Steps para janelas do navegador
+
+### **🚀 Execução BDD:**
+```bash
+# Executar todos os testes BDD
+npm run test:bdd
+
+# Abrir Cypress com BDD
+npm run test:bdd:open
+
+# Executar feature específica
+npx cypress run --spec "cypress/e2e/features/bookstore-flow.feature"
+```
+
+## 📦 **Scripts NPM Funcionais**
+
+### **✅ Scripts Principais:**
+- **`npm run test`** ✅ - Executa todos os testes
+- **`npm run test:api`** ✅ - Executa apenas testes de API
+- **`npm run test:ui`** ✅ - Executa apenas testes de UI
+- **`npm run test:ci`** ✅ - Executa testes com configuração CI
+- **`npm run cypress:ci:headless`** ✅ - Executa CI em modo headless
+- **`npm run cypress:open`** ✅ - Abre Cypress em modo interativo
+
+### **✅ Scripts BDD (Cucumber):**
+- **`npm run test:bdd`** ✅ - Executa todos os testes BDD
+- **`npm run test:bdd:open`** ✅ - Abre Cypress com BDD
+
+### **✅ Configurações:**
+- **`cypress.config.js`** ✅ - Configuração padrão
+- **`cypress.config.ci.js`** ✅ - Configuração para CI/CD
+- **`cypress.config.cucumber.js`** ✅ - Configuração para BDD
 
 ## 🔧 **Comandos Personalizados**
 

@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import SortablePage from '../pages/SortablePage.js'
+import SortablePage from '../../pages/SortablePage.js'
 
 describe('Sortable - Drag and Drop', () => {
   beforeEach(() => {

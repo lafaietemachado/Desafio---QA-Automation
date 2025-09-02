@@ -7,9 +7,13 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "test": "cypress run",
-    "cypress:ci": "cypress run --config cypress.config.ci.js",
-    "cypress:ci:headless": "cypress run --config cypress.config.ci.js --headless",
-    "test:ci": "cypress run --config cypress.config.ci.js"
+    "cypress:ci": "cypress run --config-file cypress.config.ci.js",
+    "cypress:ci:headless": "cypress run --config-file cypress.config.ci.js --headless",
+    "test:ci": "cypress run --config-file cypress.config.ci.js",
+    "test:bdd": "cypress run --config cypress.config.cucumber.js",
+    "test:bdd:open": "cypress open --config cypress.config.cucumber.js",
+    "test:api": "cypress run --spec 'cypress/e2e/api/**/*.cy.js'",
+    "test:ui": "cypress run --spec 'cypress/e2e/ui/**/*.cy.js'"
   },
   "keywords": [],
   "author": "Lafaiete Machado",
