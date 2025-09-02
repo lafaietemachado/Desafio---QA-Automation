@@ -51,25 +51,20 @@ class ProgressBarPage {
   }
 
   static waitForProgressToReachOrStop(targetPercentage, stopButtonSelector) {
-    // Monitorar o progresso e parar quando estiver próximo ao alvo
-    cy.wait(2000) // Aguardar um pouco para o progresso começar
+    cy.wait(2000)
     
-    // Verificar o progresso a cada 500ms até atingir o valor desejado
     cy.get(this.selectors.progressValue).should(($progressBar) => {
       const text = $progressBar.text()
       const currentValue = parseInt(text.replace('%', ''))
       
-      // Se chegou próximo ao alvo (entre 20% e 25%), parar
       if (currentValue >= 20 && currentValue <= 25) {
         cy.log(`✅ Progresso atingiu ${currentValue}% - parando antes dos ${targetPercentage}%`)
         return true
       }
       
-      // Se ainda não chegou, continuar aguardando
       return false
     }, { timeout: 10000 })
     
-    // Clicar no botão para parar
     cy.get(stopButtonSelector).click()
   }
 }
