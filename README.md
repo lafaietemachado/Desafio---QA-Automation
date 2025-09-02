@@ -74,7 +74,13 @@ cypress-automation-tests/
 │       ├── commands.js                  # Comandos personalizados
 │       └── e2e.js                       # Configurações
 ├── cypress.config.js                    # Configuração Cypress
+├── cypress.config.ci.js                 # Configuração CI/CD
+├── cypress.config.cucumber.js           # Configuração BDD
 ├── package.json                         # Dependências
+├── .github/
+│   └── workflows/
+│       ├── cypress-simple.yml           # Workflow principal CI/CD
+│       └── cypress-tests.yml            # Workflow alternativo CI/CD
 └── README.md                            # Documentação
 ```
 
@@ -161,18 +167,28 @@ npm run cypress:ci:headless
 
 ## 🔄 **CI/CD com GitHub Actions**
 
-O projeto está configurado com GitHub Actions para execução automática dos testes:
+O projeto está configurado com **DOIS workflows** do GitHub Actions para máxima flexibilidade:
 
-### **Workflow Automático:**
+### **🔄 Workflow Principal (cypress-simple.yml):**
 - ✅ **Execução automática** a cada push/PR
 - ✅ **Testes em ambiente Linux** (Ubuntu)
 - ✅ **Cache de dependências** para maior velocidade
 - ✅ **Upload de screenshots** em caso de falha
 - ✅ **Upload de vídeos** para análise
 - ✅ **Relatórios automáticos** de execução
+- ✅ **Verificação do Cypress** antes da execução
+- ✅ **Listagem de arquivos** para debug
+
+### **🔄 Workflow Alternativo (cypress-tests.yml):**
+- ✅ **Configuração simplificada** para máxima compatibilidade
+- ✅ **Execução direta** via `npm run test:ci`
+- ✅ **Sem flags problemáticas** do Cypress Cloud
+- ✅ **Upload de artefatos** completos
+- ✅ **Resumo automático** de resultados
 
 ### **Configuração CI:**
-- **Arquivo:** `.github/workflows/cypress-simple.yml`
+- **Arquivo Principal:** `.github/workflows/cypress-simple.yml` ✅
+- **Arquivo Alternativo:** `.github/workflows/cypress-tests.yml` ✅
 - **Configuração:** `cypress.config.ci.js` ✅
 - **Scripts:** `npm run test:ci` ✅
 - **Retry:** 2 tentativas em caso de falha
@@ -197,6 +213,7 @@ O projeto está configurado com GitHub Actions para execução automática dos t
 - **Estrutura:** BDD + Page Objects + Comandos Personalizados
 - **Estabilidade:** Muito alta
 - **CI/CD:** ✅ Configuração funcionando perfeitamente
+- **Workflows:** ✅ Dois workflows GitHub Actions funcionais
 - **Scripts NPM:** ✅ Todos os comandos validados
 
 ## 🆕 **Funcionalidades Avançadas**
@@ -311,6 +328,8 @@ npx cypress run --spec "cypress/e2e/features/bookstore-flow.feature"
 12. **Sortable Elements** - Reorganização inteligente de elementos
 13. **Testes de Volume** - Criação e remoção de múltiplos registros
 14. **Arquitetura Escalável** - Fácil adição de novas funcionalidades
+15. **CI/CD Duplo** - Dois workflows GitHub Actions para máxima flexibilidade
+16. **Workflows Corrigidos** - Sem erros de flags problemáticas do Cypress Cloud
 
 ## 🔧 **Melhorias Técnicas**
 
