@@ -1,7 +1,7 @@
 {
   "name": "cypress-automation-tests",
   "version": "1.0.0",
-  "description": "",
+  "description": "Testes automatizados para o site DemoQA",
   "main": "index.js",
   "scripts": {
     "cypress:open": "cypress open",
@@ -9,7 +9,7 @@
     "test": "cypress run"
   },
   "keywords": [],
-  "author": "",
+  "author": "Lafaiete Machado",
   "license": "ISC",
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^19.0.0",
