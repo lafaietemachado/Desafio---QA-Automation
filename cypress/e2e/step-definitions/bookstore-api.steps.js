@@ -1,6 +1,5 @@
 import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor'
 
-// Dados compartilhados entre os steps
 let userId = ''
 let token = ''
 let books = []
@@ -25,7 +24,6 @@ When('criar um novo usuário com username {string} e password {string}', (userna
       expect(response.status).to.eq(201)
     } else {
       cy.log(`⚠️ Usuário já existe ou erro na criação: ${response.status}`)
-      // Se o usuário já existe, tentar buscar o ID
       cy.request({
         method: 'POST',
         url: 'https://demoqa.com/Account/v1/GenerateToken',
@@ -35,7 +33,6 @@ When('criar um novo usuário com username {string} e password {string}', (userna
         }
       }).then((tokenResponse) => {
         if (tokenResponse.status === 200) {
-          // Buscar informações do usuário
           cy.request({
             method: 'POST',
             url: 'https://demoqa.com/Account/v1/Authorized',
@@ -45,7 +42,6 @@ When('criar um novo usuário com username {string} e password {string}', (userna
             }
           }).then((authResponse) => {
             if (authResponse.status === 200) {
-              // Se autorizado, buscar o ID do usuário
               cy.request({
                 method: 'GET',
                 url: `https://demoqa.com/Account/v1/User/${username}`,
