@@ -73,3 +73,15 @@ Cypress.Commands.add('waitForProgressBar', (targetPercentage, timeout = 60000) =
   cy.get('.progress-bar', { timeout: timeout }).should('contain', targetPercentage)
   cy.log(`✅ Barra de progresso atingiu ${targetPercentage}`)
 })
+
+Cypress.Commands.add('dragAndDrop', (fromSelector, toSelector, fromName = 'elemento origem', toName = 'elemento destino') => {
+  cy.get(fromSelector).should('be.visible').trigger('mousedown', { button: 0 })
+  cy.get(toSelector).should('be.visible').trigger('mousemove').trigger('mouseup', { force: true })
+  cy.log(`✅ Drag and drop realizado: ${fromName} → ${toName}`)
+})
+
+Cypress.Commands.add('dragAndDropByIndex', (selector, fromIndex, toIndex, elementName = 'elemento') => {
+  cy.get(selector).eq(fromIndex).should('be.visible').trigger('mousedown', { button: 0 })
+  cy.get(selector).eq(toIndex).should('be.visible').trigger('mousemove').trigger('mouseup', { force: true })
+  cy.log(`✅ Drag and drop realizado: ${elementName} da posição ${fromIndex} para ${toIndex}`)
+})

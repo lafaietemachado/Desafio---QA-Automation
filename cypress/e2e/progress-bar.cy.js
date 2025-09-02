@@ -1,3 +1,5 @@
+/// <reference types="cypress" />
+
 import ProgressBarPage from '../pages/ProgressBarPage.js'
 
 describe('Progress Bar', () => {
