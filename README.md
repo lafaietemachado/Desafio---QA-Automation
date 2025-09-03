@@ -2,6 +2,11 @@
 
 [![Cypress Tests](https://github.com/lafaietemachado/Desafio---QA-Automation/actions/workflows/cypress-simple.yml/badge.svg)](https://github.com/lafaietemachado/Desafio---QA-Automation/actions/workflows/cypress-simple.yml)
 
+## 👨‍💻 **Desenvolvedor**
+
+**Lafaiete Rodrigues Machado**  
+*Desenvolvido em Setembro de 2025*
+
 ## 📋 **Visão Geral do Projeto**
 
 Este projeto implementa uma suite completa de testes automatizados para o site DemoQA, incluindo testes de API para BookStore e testes de interface para diversas funcionalidades web. O projeto utiliza Cypress como framework principal e segue as melhores práticas de automação de testes.
