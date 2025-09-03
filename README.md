@@ -1,6 +1,6 @@
 # 🚀 Projeto de Automação de Testes - DemoQA + BookStore API
 
-[![Cypress Tests](https://github.com/lafaietemachado/Desafio---QA-Automation/actions/workflows/cypress-simple.yml/badge.svg)](https://github.com/lafaietemachado/Desafio---QA-Automation/actions/workflows/cypress-simple.yml)
+[![Cypress Tests](https://github.com/lafaietemachado/Desafio---QA-Automation/actions/workflows/cypress-tests.yml/badge.svg)](https://github.com/lafaietemachado/Desafio---QA-Automation/actions/workflows/cypress-tests.yml)
 
 ## 👨‍💻 **Desenvolvedor**
 
@@ -92,8 +92,7 @@ cypress-automation-tests/
 ├── package.json                         # Dependências
 ├── .github/
 │   └── workflows/
-│       ├── cypress-simple.yml           # Workflow principal CI/CD
-│       └── cypress-tests.yml            # Workflow alternativo CI/CD
+│       └── cypress-tests.yml            # Workflow principal CI/CD
 ├── cypress/
 │   └── reports/                         # Relatórios estruturados
 │       └── html/                        # Relatórios HTML
@@ -183,9 +182,9 @@ npm run cypress:ci:headless
 
 ## 🔄 **CI/CD com GitHub Actions**
 
-O projeto está configurado com **DOIS workflows** do GitHub Actions para máxima flexibilidade:
+O projeto está configurado com **workflow otimizado** do GitHub Actions:
 
-### **🔄 Workflow Principal (cypress-simple.yml):**
+### **🔄 Workflow Principal (cypress-tests.yml):**
 - ✅ **Execução automática** a cada push/PR
 - ✅ **Testes em ambiente Linux** (Ubuntu)
 - ✅ **Cache de dependências** para maior velocidade
@@ -194,18 +193,11 @@ O projeto está configurado com **DOIS workflows** do GitHub Actions para máxim
 - ✅ **Relatórios automáticos** de execução
 - ✅ **Verificação do Cypress** antes da execução
 - ✅ **Listagem de arquivos** para debug
-
-### **🔄 Workflow Alternativo (cypress-tests.yml):**
-- ✅ **Configuração simplificada** para máxima compatibilidade
-- ✅ **Execução direta** via `npm run test:ci`
-- ✅ **Sem flags problemáticas** do Cypress Cloud
-- ✅ **Upload de artefatos** completos
-- ✅ **Upload de relatórios HTML** estruturados
 - ✅ **Resumo automático** de resultados
+- ✅ **Upload de relatórios HTML** estruturados
 
 ### **Configuração CI:**
-- **Arquivo Principal:** `.github/workflows/cypress-simple.yml` ✅
-- **Arquivo Alternativo:** `.github/workflows/cypress-tests.yml` ✅
+- **Arquivo Principal:** `.github/workflows/cypress-tests.yml` ✅
 - **Configuração:** `cypress.config.ci.js` ✅
 - **Scripts:** `npm run test:ci` ✅
 - **Retry:** 2 tentativas em caso de falha
@@ -349,8 +341,8 @@ npx cypress run --spec "cypress/e2e/features/bookstore-flow.feature"
 12. **Sortable Elements** - Reorganização inteligente de elementos
 13. **Testes de Volume** - Criação e remoção de múltiplos registros
 14. **Arquitetura Escalável** - Fácil adição de novas funcionalidades
-15. **CI/CD Duplo** - Dois workflows GitHub Actions para máxima flexibilidade
-16. **Workflows Corrigidos** - Sem erros de flags problemáticas do Cypress Cloud
+15. **CI/CD Otimizado** - Workflow único GitHub Actions para máxima eficiência
+16. **Workflow Otimizado** - Sem execuções duplicadas, execução única por evento
 17. **Relatórios Estruturados** - Mochawesome HTML com vídeos integrados
 18. **Upload Automático** - Relatórios HTML no GitHub Actions
 
